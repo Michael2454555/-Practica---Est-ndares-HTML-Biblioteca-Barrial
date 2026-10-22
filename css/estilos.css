@@ -1,0 +1,328 @@
+:root {
+  --color-fondo: #fdfcf9;          /* Fondo cálido de lectura */
+  --color-superficie: #ffffff;     /* Fondo de tarjetas y secciones */
+  --color-superficie-alt: #f3f1ec; /* Fondo alterno para tabla y aside */
+  --color-texto: #1b1f27;          /* Contraste 16.2:1 sobre fondo  */
+  --color-texto-secundario: #4a505c; /* Contraste 7.8:1 sobre superficie */
+  --color-primario: #0b5fff;       /* Azul acento: Contraste 5.0:1 sobre blanco */
+  --color-primario-oscuro: #0043ce;
+  --color-borde: #cfccc4;          /* Borde sutil para tarjetas y tablas */
+  --color-borde-control: #6e7582;  /* Contraste > 3:1 en inputs  */
+  --color-foco: #d97706;           /* Anillo de foco visible de alto contraste */
+  --color-exito: #15803d;
+  --color-error: #b91c1c;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.6;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+h1 {
+  font-size: clamp(1.65rem, 1.2rem + 2vw, 2.4rem);
+  line-height: 1.2;
+  margin: 0 0 0.25rem 0;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.85rem);
+  line-height: 1.25;
+  margin-top: 0;
+  color: var(--color-texto);
+}
+
+h3 {
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  line-height: 1.3;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+p,
+li,
+td,
+th,
+label,
+input,
+select,
+button,
+summary,
+figcaption {
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+}
+
+.texto-ayuda,
+.libro-meta,
+caption {
+  font-size: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
+  color: var(--color-texto-secundario);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  z-index: 100;
+  background-color: var(--color-texto);
+  color: var(--color-superficie);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-foco);
+  outline-offset: 2px;
+}
+
+.cabecera {
+  background-color: var(--color-superficie);
+  border-bottom: 2px solid var(--color-borde);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cabecera__marca p {
+  margin: 0;
+  color: var(--color-texto-secundario);
+}
+
+.nav-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-lista a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* WCAG 2.5.8 Tamaño del objetivo */
+  padding: 0.4rem 0.85rem;
+  color: var(--color-primario);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.nav-lista a:hover {
+  background-color: var(--color-superficie-alt);
+  border-color: var(--color-borde);
+}
+
+.layout-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  min-width: 0; /* Evita desbordamiento en pantallas de 360px */
+}
+
+main > section,
+aside {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+aside {
+  background-color: var(--color-superficie-alt);
+  align-self: start;
+}
+
+/* Grid interno para las tarjetas de libros */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.libro-card {
+  border: 1px solid var(--color-borde);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background-color: var(--color-fondo);
+  display: flex;
+  flex-direction: column;
+}
+
+.libro-card figure {
+  margin: 0 0 0.75rem 0;
+}
+
+.libro-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-borde);
+}
+
+.libro-card figcaption {
+  margin-top: 0.4rem;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid var(--color-borde);
+}
+
+thead th {
+  background-color: var(--color-superficie-alt);
+  color: var(--color-texto);
+  font-weight: 700;
+}
+
+tbody th[scope="row"] {
+  background-color: var(--color-fondo);
+  font-weight: 600;
+}
+
+.formulario-socio {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+fieldset {
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+legend {
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-borde-control);
+  border-radius: 0.4rem;
+  background-color: var(--color-superficie);
+  color: var(--color-texto);
+  width: 100%;
+}
+
+.texto-ayuda {
+  margin: 0;
+}
+
+.btn-enviar {
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primario);
+  color: var(--color-superficie);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  justify-self: start;
+}
+
+.btn-enviar:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+/* Acordeones nativos en el aside */
+details {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pie-pagina {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-top: 1px solid var(--color-borde);
+  background-color: var(--color-superficie);
+  margin-top: 2rem;
+}
+
+@media (min-width: 720px) {
+  .layout-principal {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
+  }
+
+  .catalogo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
