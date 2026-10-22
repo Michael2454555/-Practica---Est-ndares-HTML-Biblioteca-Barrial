@@ -39,7 +39,7 @@
               <figcaption>Edición patrimonial — Estante A2</figcaption>
             </figure>
             <h3>Huasipungo</h3>
-            <p class="libro-meta"><strong>Autor:</strong> Jorge Icaza · <strong>Categoría:</strong> Novela Social</p>
+            <p class="libro-card"><strong>Autor:</strong> Jorge Icaza · <strong>Categoría:</strong> Novela Social</p>
             <p>Obra clásica de la literatura ecuatoriana disponible en edición comentada de tapa dura.</p>
           </article>
 
@@ -49,7 +49,7 @@
               <figcaption>Ejemplar restaurado — Estante B4</figcaption>
             </figure>
             <h3>Cien años de soledad</h3>
-            <p class="libro-meta"><strong>Autor:</strong> Gabriel García Márquez · <strong>Categoría:</strong> Realismo Mágico</p>
+            <p class="libro-card"><strong>Autor:</strong> Gabriel García Márquez · <strong>Categoría:</strong> Realismo Mágico</p>
             <p>Ejemplar restaurado por el taller de encuadernación comunitaria de nuestra biblioteca.</p>
           </article>
 
@@ -59,7 +59,7 @@
               <figcaption>Colección infantil — Estante C1</figcaption>
             </figure>
             <h3>El Principito</h3>
-            <p class="libro-meta"><strong>Autor:</strong> Antoine de Saint-Exupéry · <strong>Categoría:</strong> Infantil / Juvenil</p>
+            <p class="libro-card"><strong>Autor:</strong> Antoine de Saint-Exupéry · <strong>Categoría:</strong> Infantil / Juvenil</p>
             <p>Edición ilustrada ideal para los talleres de lectura infantil de los sábados.</p>
           </article>
         </div>
@@ -71,7 +71,7 @@
 
         <div class="tabla-contenedor">
           <table>
-            <caption>Condiciones de préstamo domiciliario según tipo de socio barrial (Periodo 2026)</caption>
+            <caption>Condiciones de préstamo domiciliario según tipo de socio barrial </caption>
             <thead>
               <tr>
                 <th scope="col">Tipo de Credencial</th>
@@ -82,25 +82,25 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Vecino General</th>
+                <th scope="rowgroup">Vecino General</th>
                 <td>2 ejemplares</td>
                 <td>15 días</td>
                 <td>1 vez</td>
               </tr>
               <tr>
-                <th scope="row">Estudiante / Infantil</th>
+                <th scope="rowgroup">Estudiante / Infantil</th>
                 <td>3 ejemplares</td>
                 <td>21 días</td>
                 <td>2 veces</td>
               </tr>
               <tr>
-                <th scope="row">Docente / Investigador</th>
+                <th scope="rowgroup">Docente / Investigador</th>
                 <td>5 ejemplares</td>
                 <td>30 días</td>
                 <td>2 veces</td>
               </tr>
               <tr>
-                <th scope="row">Club de Lectura Sábados</th>
+                <th scope="rowgroup">Club de Lectura Sábados</th>
                 <td>4 ejemplares</td>
                 <td>30 días</td>
                 <td>3 veces</td>
@@ -130,7 +130,7 @@
               <p id="ayuda-cedula" class="texto-ayuda">Escriba exactamente 10 dígitos numéricos, sin guiones ni espacios.</p>
             </div>
 
-            <!-- CAMPO ESPECIAL FICHA 25: Correo con pattern personalizado -->
+            <!--Correo con pattern personalizado -->
             <div class="campo-grupo">
               <label for="correo">Correo electrónico (*)</label>
               <input id="correo" name="correo" type="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="email" aria-describedby="ayuda-correo" placeholder="vecino@dominio.ec">
@@ -171,8 +171,8 @@
     </main>
 
 
-    <aside id="info-util" aria-label="Información complementaria de la biblioteca">
-      <h2>Atención y Preguntas Frecuentes</h2>
+    <aside id="info-util" aria-labelledby="titulo-aside">
+      <h2 id="titulo-aside">Atención y Preguntas Frecuentes</h2>
       
       <section aria-labelledby="titulo-horarios">
         <h3 id="titulo-horarios">Horarios de Apertura</h3>
