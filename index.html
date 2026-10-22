@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Barrial El Ejido | Lectura y Comunidad</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="cabecera">
+    <div class="cabecera__marca">
+      <h1>Biblioteca Barrial El Ejido</h1>
+      <p>Espacio comunitario de lectura, préstamos y cultura abierta</p>
+    </div>
+
+    <nav aria-label="Principal">
+      <ul class="nav-lista">
+        <li><a href="#catalogo">Catálogo del Mes</a></li>
+        <li><a href="#prestamos">Tarifas y Plazos</a></li>
+        <li><a href="#registro">Hacerse Socio</a></li>
+        <li><a href="#info-util">Horarios y Dudas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout-principal">
+    <main id="contenido">
+      
+      <section id="catalogo" aria-labelledby="titulo-catalogo">
+        <h2 id="titulo-catalogo">Libros Destacados del Mes</h2>
+        <p>Obras seleccionadas por los vecinos del barrio, disponibles para préstamo inmediato.</p>
+
+        <div class="catalogo-grid">
+          <article class="libro-card">
+            <figure>
+              <img src="img/huasipungo.jpg" alt="Portada del libro Huasipungo de Jorge Icaza" width="320" height="180" loading="lazy">
+              <figcaption>Edición patrimonial — Estante A2</figcaption>
+            </figure>
+            <h3>Huasipungo</h3>
+            <p class="libro-meta"><strong>Autor:</strong> Jorge Icaza · <strong>Categoría:</strong> Novela Social</p>
+            <p>Obra clásica de la literatura ecuatoriana disponible en edición comentada de tapa dura.</p>
+          </article>
+
+          <article class="libro-card">
+            <figure>
+              <img src="img/cien-anos.jpg" alt="Portada del libro Cien años de soledad de Gabriel García Márquez" width="320" height="180" loading="lazy">
+              <figcaption>Ejemplar restaurado — Estante B4</figcaption>
+            </figure>
+            <h3>Cien años de soledad</h3>
+            <p class="libro-meta"><strong>Autor:</strong> Gabriel García Márquez · <strong>Categoría:</strong> Realismo Mágico</p>
+            <p>Ejemplar restaurado por el taller de encuadernación comunitaria de nuestra biblioteca.</p>
+          </article>
+
+          <article class="libro-card">
+            <figure>
+              <img src="img/principito.jpg" alt="Portada del libro El Principito de Antoine de Saint-Exupéry" width="320" height="180" loading="lazy">
+              <figcaption>Colección infantil — Estante C1</figcaption>
+            </figure>
+            <h3>El Principito</h3>
+            <p class="libro-meta"><strong>Autor:</strong> Antoine de Saint-Exupéry · <strong>Categoría:</strong> Infantil / Juvenil</p>
+            <p>Edición ilustrada ideal para los talleres de lectura infantil de los sábados.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="prestamos" aria-labelledby="titulo-prestamos">
+        <h2 id="titulo-prestamos">Modalidades de Préstamo y Cupos</h2>
+        <p>Consulta cuántos libros puedes llevar a casa según tu tipo de credencial barrial.</p>
+
+        <div class="tabla-contenedor">
+          <table>
+            <caption>Condiciones de préstamo domiciliario según tipo de socio barrial (Periodo 2026)</caption>
+            <thead>
+              <tr>
+                <th scope="col">Tipo de Credencial</th>
+                <th scope="col">Libros Simultáneos</th>
+                <th scope="col">Plazo (Días)</th>
+                <th scope="col">Renovaciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Vecino General</th>
+                <td>2 ejemplares</td>
+                <td>15 días</td>
+                <td>1 vez</td>
+              </tr>
+              <tr>
+                <th scope="row">Estudiante / Infantil</th>
+                <td>3 ejemplares</td>
+                <td>21 días</td>
+                <td>2 veces</td>
+              </tr>
+              <tr>
+                <th scope="row">Docente / Investigador</th>
+                <td>5 ejemplares</td>
+                <td>30 días</td>
+                <td>2 veces</td>
+              </tr>
+              <tr>
+                <th scope="row">Club de Lectura Sábados</th>
+                <td>4 ejemplares</td>
+                <td>30 días</td>
+                <td>3 veces</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      
+      <section id="registro" aria-labelledby="titulo-registro">
+        <h2 id="titulo-registro">Solicitud de Credencial y Reserva</h2>
+        <p>Completa tus datos para obtener tu carnet barrial y reservar libros. Todos los campos marcados con (*) son obligatorios.</p>
+
+        <form action="#" method="post" class="formulario-socio">
+          <fieldset>
+            <legend>1. Datos Personales del Vecino</legend>
+
+            <div class="campo-grupo">
+              <label for="nombre">Nombre completo (*)</label>
+              <input id="nombre" name="nombre" type="text" required minlength="3" autocomplete="name" placeholder="Ej. Ana Pérez">
+            </div>
+
+            <div class="campo-grupo">
+              <label for="cedula">Número de cédula (*)</label>
+              <input id="cedula" name="cedula" type="text" inputmode="numeric" required pattern="[0-9]{10}" aria-describedby="ayuda-cedula" placeholder="0102030405">
+              <p id="ayuda-cedula" class="texto-ayuda">Escriba exactamente 10 dígitos numéricos, sin guiones ni espacios.</p>
+            </div>
+
+            <!-- CAMPO ESPECIAL FICHA 25: Correo con pattern personalizado -->
+            <div class="campo-grupo">
+              <label for="correo">Correo electrónico (*)</label>
+              <input id="correo" name="correo" type="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="email" aria-describedby="ayuda-correo" placeholder="vecino@dominio.ec">
+              <p id="ayuda-correo" class="texto-ayuda">Debe incluir usuario, símbolo @, dominio y extensión de al menos 2 letras (ej. .ec, .com, .org).</p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Detalles del Préstamo Inicial</legend>
+
+            <div class="campo-grupo">
+              <label for="credencial">Modalidad de credencial (*)</label>
+              <select id="credencial" name="credencial" required>
+                <option value="">Seleccione una modalidad</option>
+                <option value="vecino">Vecino General (hasta 2 libros)</option>
+                <option value="estudiante">Estudiante / Infantil (hasta 3 libros)</option>
+                <option value="docente">Docente / Investigador (hasta 5 libros)</option>
+                <option value="club">Club de Lectura Sábados (hasta 4 libros)</option>
+              </select>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="cantidad">Cantidad de libros a retirar (1 a 5) (*)</label>
+              <input id="cantidad" name="cantidad" type="number" required min="1" max="5" value="1" aria-describedby="ayuda-cantidad">
+              <p id="ayuda-cantidad" class="texto-ayuda">Mínimo 1 ejemplar y máximo 5 ejemplares por solicitud.</p>
+            </div>
+
+            <div class="campo-grupo">
+              <label for="fecha-retiro">Fecha estimada de retiro (*)</label>
+              <input id="fecha-retiro" name="fecha-retiro" type="date" required min="2026-10-21" max="2026-12-31">
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-enviar">Registrar Solicitud de Préstamo</button>
+        </form>
+      </section>
+
+    </main>
+
+
+    <aside id="info-util" aria-label="Información complementaria de la biblioteca">
+      <h2>Atención y Preguntas Frecuentes</h2>
+      
+      <section aria-labelledby="titulo-horarios">
+        <h3 id="titulo-horarios">Horarios de Apertura</h3>
+        <ul>
+          <li><strong>Lunes a viernes:</strong> 09:00 a 18:30</li>
+          <li><strong>Sábados:</strong> 09:00 a 14:00 (Club de lectura)</li>
+          <li><strong>Domingos y feriados:</strong> Cerrado</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="titulo-faq">
+        <h3 id="titulo-faq">Dudas Frecuentes</h3>
+        <details>
+          <summary>¿Tiene costo sacar el carnet barrial?</summary>
+          <p>No, el carnet es totalmente gratuito presentando una planilla de servicio básico del barrio.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si entrego un libro con retraso?</summary>
+          <p>No cobramos multas en dinero; se solicita donar útiles escolares o apoyar 1 hora en el orden de estanterías.</p>
+        </details>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="pie-pagina">
+    <p>&copy; 2026 Biblioteca Barrial El Ejido — Cuenca, Ecuador. Construido bajo estándares WHATWG, W3C y WCAG 2.2 AA.</p>
+  </footer>
+</body>
+</html>
