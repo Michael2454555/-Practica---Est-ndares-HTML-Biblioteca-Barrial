@@ -160,7 +160,8 @@
 
             <div class="campo-grupo">
               <label for="fecha-retiro">Fecha estimada de retiro (*)</label>
-              <input id="fecha-retiro" name="fecha-retiro" type="date" required min="2026-10-21" max="2026-12-31">
+              <input id="fecha-retiro" name="fecha-retiro" type="date" min="2026-10-21" max="2026-12-31" aria-describedby="ayuda-fecha" required>
+              <p id="ayuda-fecha" class="texto-ayuda">Elija una fecha entre hoy y el 31/12/2026.</p>
             </div>
           </fieldset>
 
