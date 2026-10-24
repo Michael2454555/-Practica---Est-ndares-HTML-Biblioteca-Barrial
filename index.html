@@ -133,7 +133,7 @@
             <!--Correo con pattern personalizado -->
             <div class="campo-grupo">
               <label for="correo">Correo electrónico (*)</label>
-              <input id="correo" name="correo" type="email" required pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" autocomplete="email" aria-describedby="ayuda-correo" placeholder="vecino@dominio.ec">
+              <input id="correo" type="email" pattern="^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$" required>
               <p id="ayuda-correo" class="texto-ayuda">Debe incluir usuario, símbolo @, dominio y extensión de al menos 2 letras (ej. .ec, .com, .org).</p>
             </div>
           </fieldset>
